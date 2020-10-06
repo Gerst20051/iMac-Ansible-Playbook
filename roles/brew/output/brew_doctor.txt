@@ -17,8 +17,6 @@ Alternatively, manually download them from:
 Warning: Some installed formulae were deleted!
 You should find replacements for the following formulae:
   python@2
-  mongodb
-  chromedriver
 
 Warning: Unbrewed dylibs were found in /usr/local/lib.
 If you didn't put them there on purpose they could cause problems when
@@ -40,4 +38,11 @@ Leaving kegs unlinked can lead to build-trouble and cause brews that depend on
 those kegs to fail to run properly once built. Run `brew link` on these:
   python
   node
-Error: unknown or unsupported macOS version: :mountain_lion
+
+Warning: Homebrew's sbin was not found in your PATH but you have installed
+formulae that put executables in /usr/local/sbin.
+Consider setting the PATH for example like so:
+  echo 'export PATH="/usr/local/sbin:$PATH"' >> /Users/andrewgerst/.bash_profile
+
+Warning: Broken symlinks were found. Remove them with `brew cleanup`:
+  /usr/local/share/man/man1/brew-cask.1

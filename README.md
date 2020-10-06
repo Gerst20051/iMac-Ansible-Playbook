@@ -27,10 +27,3 @@ An ansible playbook used to maintain an iMac
 TASK [Gathering Facts] **************************************************************************************************************************************************************
 [WARNING]: Platform darwin on host 0.0.0.0 is using the discovered Python interpreter at /usr/bin/python, but future installation of another Python interpreter could change this.
 See https://docs.ansible.com/ansible/2.9/reference_appendices/interpreter_discovery.html for more information.
-
-Brew Doctor
-# https://discourse.brew.sh/t/unknown-or-unsupported-macos-version-mountain-lion/8087
-
-Warning: A newer Command Line Tools release is available.
-Update them from Software Update in System Preferences or run:
-  softwareupdate --all --install --force
