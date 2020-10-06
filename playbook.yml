@@ -9,6 +9,8 @@
   roles:
     - role: brew
       tags: ['brew']
+    - role: node
+      tags: ['node']
 
   tasks:
     - name: display message
