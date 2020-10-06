@@ -1,0 +1,16 @@
+---
+
+- hosts: localhost
+  connection: local
+
+  vars_files:
+    - vars.private.yml
+
+  roles:
+    - role: brew
+      tags: ['brew']
+
+  tasks:
+    - name: display message
+      debug:
+        msg: 'Playbook Is Finished Running!'

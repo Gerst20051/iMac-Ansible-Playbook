@@ -1,0 +1,14 @@
+---
+
+brew_packages:
+  - dockutil # command line tool for managing dock items
+  - git # distributed version control system
+  - go # open source programming language designed at google
+  - gource # software version control visualization
+  - jq # lightweight and flexible command-line json processor
+  - m-cli # swiss army knife for macos that simplifies the best terminal commands
+  - mas # mac app store command line interface
+  - zsh # a shell designed for interactive use
+
+brew_cask_packages:
+  - muzzle # a simple mac app to silence embarrassing notifications while screensharing

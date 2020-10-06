@@ -1,0 +1,15 @@
+---
+
+- name: install packages
+  homebrew:
+    name: '{{ brew_packages }}'
+    state: latest
+  tags:
+    - install_brew
+
+- name: install cask packages
+  homebrew_cask:
+    name: '{{ brew_cask_packages }}'
+    state: latest
+  tags:
+    - install_casks

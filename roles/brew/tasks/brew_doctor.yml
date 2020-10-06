@@ -1,0 +1,12 @@
+---
+
+# brew doctor is homebrew's own self-diagnosis tool.
+# homebrew will self-diagnose, see if everything works the way it should and report back.
+# it will usually tell you what's wrong in great detail, so that you can help it fix itself very quickly, on the off chance something goes wrong.
+- name: register output from brew doctor
+  shell: brew doctor
+  register: brew_doctor
+  ignore_errors: true
+
+- name: save output from brew doctor
+  local_action: copy content={{ brew_doctor.stderr }} dest={{ role_path }}/output/brew_doctor.txt

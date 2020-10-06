@@ -1,0 +1,43 @@
+Please note that these warnings are just used to help the Homebrew maintainers
+with debugging if you file an issue. If everything you use Homebrew for is
+working fine: please don't worry or file an issue; just ignore this. Thanks!
+
+Warning: A newer Command Line Tools release is available.
+Update them from Software Update in System Preferences or run:
+  softwareupdate --all --install --force
+
+If that doesn't show you an update run:
+  sudo rm -rf /Library/Developer/CommandLineTools
+  sudo xcode-select --install
+
+Alternatively, manually download them from:
+  https://developer.apple.com/download/more/.
+
+
+Warning: Some installed formulae were deleted!
+You should find replacements for the following formulae:
+  python@2
+  mongodb
+  chromedriver
+
+Warning: Unbrewed dylibs were found in /usr/local/lib.
+If you didn't put them there on purpose they could cause problems when
+building Homebrew formulae, and may need to be deleted.
+
+Unexpected dylibs:
+  /usr/local/lib/libwkhtmltox.0.12.4.dylib
+
+Warning: Unbrewed header files were found in /usr/local/include.
+If you didn't put them there on purpose they could cause problems when
+building Homebrew formulae, and may need to be deleted.
+
+Unexpected header files:
+  /usr/local/include/wkhtmltox/image.h
+  /usr/local/include/wkhtmltox/pdf.h
+
+Warning: You have unlinked kegs in your Cellar.
+Leaving kegs unlinked can lead to build-trouble and cause brews that depend on
+those kegs to fail to run properly once built. Run `brew link` on these:
+  python
+  node
+Error: unknown or unsupported macOS version: :mountain_lion

@@ -1,0 +1,15 @@
+---
+
+# brew update is for updating homebrew (downloads new "formulae" but won't upgrade the installed software)
+- name: update homebrew
+  homebrew:
+    update_homebrew: yes
+  tags:
+    - brew_update
+
+# brew upgrade is for updating installed software
+- name: upgrade homebrew
+  homebrew:
+    upgrade_all: yes
+  tags:
+    - brew_upgrade
