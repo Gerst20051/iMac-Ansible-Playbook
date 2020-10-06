@@ -14,35 +14,7 @@ Alternatively, manually download them from:
   https://developer.apple.com/download/more/.
 
 
-Warning: Some installed formulae were deleted!
-You should find replacements for the following formulae:
-  python@2
-
-Warning: Unbrewed dylibs were found in /usr/local/lib.
-If you didn't put them there on purpose they could cause problems when
-building Homebrew formulae, and may need to be deleted.
-
-Unexpected dylibs:
-  /usr/local/lib/libwkhtmltox.0.12.4.dylib
-
-Warning: Unbrewed header files were found in /usr/local/include.
-If you didn't put them there on purpose they could cause problems when
-building Homebrew formulae, and may need to be deleted.
-
-Unexpected header files:
-  /usr/local/include/wkhtmltox/image.h
-  /usr/local/include/wkhtmltox/pdf.h
-
-Warning: You have unlinked kegs in your Cellar.
-Leaving kegs unlinked can lead to build-trouble and cause brews that depend on
-those kegs to fail to run properly once built. Run `brew link` on these:
-  python
-  node
-
 Warning: Homebrew's sbin was not found in your PATH but you have installed
 formulae that put executables in /usr/local/sbin.
 Consider setting the PATH for example like so:
   echo 'export PATH="/usr/local/sbin:$PATH"' >> /Users/andrewgerst/.bash_profile
-
-Warning: Broken symlinks were found. Remove them with `brew cleanup`:
-  /usr/local/share/man/man1/brew-cask.1
