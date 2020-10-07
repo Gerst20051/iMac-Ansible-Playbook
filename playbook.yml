@@ -13,6 +13,8 @@
       tags: ['node']
     - role: app_store
       tags: ['app_store']
+    - role: dock
+      tags: ['dock']
 
   tasks:
     - name: display message

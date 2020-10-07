@@ -1,0 +1,18 @@
+---
+
+dock_items:
+  - "'' --type spacer --section apps"
+  - /Applications/Google\ Chrome.app
+  - /Applications/Spotify.app
+  - /Applications/iTerm.app
+  - /Applications/Sublime\ Text.app
+  - /Applications/Visual\ Studio\ Code.app
+  - /Applications/Xcode.app
+  - /Applications/TablePlus.app
+  - /Applications/Cyberduck.app
+  - /Applications/Paw.app
+  - "'' --type spacer --section apps"
+  - "/Applications --section others --view grid --display folder --sort name"
+  - "~/Documents --section others --view grid --display folder --sort name"
+  - "~/Downloads --section others --view grid --display folder --sort dateadded"
+  - "~/Desktop --section others --view grid --display folder --sort name"
