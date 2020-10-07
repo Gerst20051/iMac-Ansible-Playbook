@@ -1,0 +1,12 @@
+---
+
+- name: upgrade all app store apps
+  command: mas upgrade
+  register: result
+  changed_when: result.stdout.find('Everything is up-to-date') != 0
+
+- name: install app store apps
+  command: mas install {{ item }}
+  with_items: "{{ apps }}"
+  register: result
+  changed_when: '"is already installed" not in result.stdout'

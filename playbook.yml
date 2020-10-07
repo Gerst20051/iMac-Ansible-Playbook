@@ -11,6 +11,8 @@
       tags: ['brew']
     - role: node
       tags: ['node']
+    - role: app_store
+      tags: ['app_store']
 
   tasks:
     - name: display message
