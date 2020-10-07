@@ -3,3 +3,4 @@
 - include: brew_doctor.yml
 - include: brew_up_to_date.yml
 - include: brew_packages.yml
+- include: brew_ls.yml

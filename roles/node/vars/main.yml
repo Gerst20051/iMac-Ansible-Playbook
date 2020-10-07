@@ -1,0 +1,34 @@
+---
+
+# NOTE: running `nvm version default` or `nvm version lts/erbium` returns `v12.19.0`
+default_node_version_name: lts/erbium
+default_node_version: v12.19.0
+
+node_packages_to_install_globally:
+  - create-react-app # create react apps with no build configuration
+  - npm-quick-run # quickly run npm script by prefix without typing the full name
+  - npmrc # switch between different .npmrc files with ease and grace
+
+# https://github.com/nodejs/Release
+# https://github.com/nodejs/Release#release-schedule
+# https://github.com/nvm-sh/nvm#long-term-support
+# https://nodejs.org/download/release/latest-v8.x/
+# https://nodejs.org/download/release/latest-v10.x/
+# https://nodejs.org/download/release/latest-v12.x/
+# https://nodejs.org/download/release/latest-v14.x/
+# run `nvm ls-remote --lts` to list lts versions
+# no lts versions exist for 7.x, 9.x, 11.x, 13.x, 15.x
+# [$]> nvm ls
+# [$]> nvm ls-remote
+node_versions_to_install: # last checked for updates on 10/6/2020
+  - lts/carbon # 8.x (v8.17.0 (npm v6.13.4))
+  - lts/dubnium # 10.x (v10.22.1 (npm v6.14.6))
+  - lts/erbium # 12.x (v12.19.0 (npm v6.14.8)) CURRENTLY THE DEFAULT
+  - node # 14.x (v14.13.0 (npm v6.14.8))
+
+# node.js 14 will be the `current` release for the next 6 months, and then promoted to long-term support (lts) in october 2020
+# both node.js 12 and node.js 10 will remain in long-term support until april 2022 and april 2021 respectively
+
+# https://github.com/nvm-sh/nvm/releases
+# https://github.com/nvm-sh/nvm/releases/latest
+nvm_version: v0.36.0 # last checked for updates on 10/6/2020

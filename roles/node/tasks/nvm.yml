@@ -1,0 +1,28 @@
+---
+
+- name: clone nvm repo
+  git:
+    repo: https://github.com/nvm-sh/nvm.git
+    dest: ~/.nvm
+
+- name: check to see if nvm is installed
+  stat:
+    path: ~/.nvm/nvm.sh
+  register: nvm_exists_result
+
+- name: get the tag for the latest nvm release
+  shell: >
+    /bin/bash -c "git describe --abbrev=0 --tags --match "v[0-9]*" $(git rev-list --tags --max-count=1)"
+  register: nvm_git_describe_tag_result
+  when: nvm_exists_result.stat.exists
+  args:
+    chdir: ~/.nvm
+
+- name: save output from nvm version
+  local_action: copy content={{ nvm_git_describe_tag_result.stdout }} dest={{ role_path }}/output/nvm_version.txt
+
+- name: checkout the latest tag in the nvm repo
+  git:
+    repo: https://github.com/nvm-sh/nvm.git
+    dest: ~/.nvm
+    version: "{{ nvm_git_describe_tag_result.stdout }}"

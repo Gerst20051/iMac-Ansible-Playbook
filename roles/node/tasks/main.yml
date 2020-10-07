@@ -1,3 +1,7 @@
 ---
 
-- include: npmls.yml
+- include: config.yml
+- include: npmrc.yml
+- include: nvm.yml
+- include: node.yml
+- include: npm_ls.yml
