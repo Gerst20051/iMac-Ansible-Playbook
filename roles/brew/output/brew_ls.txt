@@ -4,6 +4,7 @@ bash-completion
 bat
 bdw-gc
 boost
+c-ares
 cairo
 dav1d
 dmd
@@ -39,6 +40,7 @@ harfbuzz
 icu4c
 ilmbase
 imagemagick
+jemalloc
 jpeg
 jq
 lame
@@ -46,6 +48,7 @@ leptonica
 libass
 libbluray
 libde265
+libev
 libevent
 libffi
 libheif
@@ -72,11 +75,11 @@ mas
 mycli
 ncurses
 nettle
+nghttp2
 oniguruma
 opencore-amr
 openexr
 openjpeg
-openssl
 openssl@1.1
 opus
 p11-kit
@@ -86,6 +89,7 @@ pixman
 pkg-config
 pv
 python@3.8
+python@3.9
 rav1e
 readline
 rtmpdump

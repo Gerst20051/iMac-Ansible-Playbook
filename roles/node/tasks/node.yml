@@ -1,9 +1,21 @@
 ---
 
-- name: install node versions
-  shell: >
-    /bin/bash -c "source ~/.nvm/nvm.sh && nvm install {{ item }}"
-  with_items: "{{ node_versions_to_install }}"
+# - name: install node versions
+#   shell: >
+#     /bin/bash -c "source ~/.nvm/nvm.sh && nvm install {{ item }}"
+#   with_items: "{{ node_versions_to_install }}"
+
+# TODO: look into why this started "failing"
+# failed: [0.0.0.0] (item=lts/carbon) => {
+#   "cmd": "/bin/bash -c \"source ~/.nvm/nvm.sh && nvm install lts/carbon\"\n",
+#   "item": "lts/carbon",
+#   "msg": "non-zero return code",
+#   "rc": 3,
+#   "stderr": "",
+#   "stderr_lines": [],
+#   "stdout": "",
+#   "stdout_lines": []
+# }
 
 - name: set the default node version
   shell: >

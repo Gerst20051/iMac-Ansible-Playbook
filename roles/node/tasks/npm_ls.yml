@@ -1,8 +1,8 @@
 ---
 
-- name: register output from npm ls global packages
-  shell: npm ls -g --depth=0
+- name: register output from system npm ls global packages
+  shell: /usr/local/bin/npm ls -g --depth=0
   register: npm_ls
 
-- name: save output from npm ls global packages
+- name: save output from system npm ls global packages
   local_action: copy content={{ npm_ls.stdout }} dest={{ role_path }}/output/npm_ls_global.txt
