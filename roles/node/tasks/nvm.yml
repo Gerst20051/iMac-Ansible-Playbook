@@ -1,5 +1,8 @@
 ---
 
+# https://github.com/nvm-sh/nvm/releases
+# https://github.com/nvm-sh/nvm/releases/latest
+
 - name: role [{{ role_name }}] clone nvm repo
   git:
     repo: https://github.com/nvm-sh/nvm.git

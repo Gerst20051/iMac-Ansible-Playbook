@@ -1,38 +1,31 @@
 ---
 
-# - name: role [{{ role_name }}] install node versions
-#   shell: >
-#     /bin/bash -c "source ~/.nvm/nvm.sh && nvm install {{ item }}"
-#   with_items: "{{ node_versions_to_install }}"
-
-# TODO: look into why this started "failing"
-# failed: [0.0.0.0] (item=lts/carbon) => {
-#   "cmd": "/bin/bash -c \"source ~/.nvm/nvm.sh && nvm install lts/carbon\"\n",
-#   "item": "lts/carbon",
-#   "msg": "non-zero return code",
-#   "rc": 3,
-#   "stderr": "",
-#   "stderr_lines": [],
-#   "stdout": "",
-#   "stdout_lines": []
-# }
+- name: role [{{ role_name }}] install node versions
+  shell: >
+    /bin/bash -c "source ~/.nvm/nvm.sh ; nvm install {{ item }}"
+  with_items: "{{ node_versions_to_install }}"
 
 - name: role [{{ role_name }}] set the default node version
   shell: >
-    /bin/bash -c "source ~/.nvm/nvm.sh && nvm alias default {{ default_node_version_name }}"
+    /bin/bash -c "source ~/.nvm/nvm.sh ; nvm alias default {{ default_node_version_name }}"
+
+- name: role [{{ role_name }}] get the default node version
+  shell: >
+    /bin/bash -c "source ~/.nvm/nvm.sh ; nvm version default"
+  register: nvm_version_default
 
 - name: role [{{ role_name }}] update global npm packages
   npm:
     global: yes
     state: latest
-    # TODO: figure out a way to dynamically retrieve and use the default node version of npm
-    executable: ~/.nvm/versions/node/{{ default_node_version }}/bin/npm
-    # executable: nvm which default
+    executable: ~/.nvm/versions/node/{{ nvm_version_default.stdout }}/bin/npm
+  when: false # TODO: figure out error
 
 - name: role [{{ role_name }}] install node packages globally
   npm:
     name: "{{ item }}"
     global: yes
     state: latest
-    executable: ~/.nvm/versions/node/{{ default_node_version }}/bin/npm
+    executable: ~/.nvm/versions/node/{{ nvm_version_default.stdout }}/bin/npm
   with_items: "{{ node_packages_to_install_globally }}"
+  when: false # TODO: figure out error
