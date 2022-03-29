@@ -1,12 +1,12 @@
 ---
 
-- name: create ~/.npmrcs directory
+- name: role [{{ role_name }}] create ~/.npmrcs directory
   file: path=~/.npmrcs state=directory
 
-- name: copy npmrc personal template to default profile
+- name: role [{{ role_name }}] copy npmrc personal template to default profile
   template: src=npmrc_personal.j2 dest=~/.npmrcs/default
 
-- name: symlink npmrc to default profile
+- name: role [{{ role_name }}] symlink npmrc to default profile
   file: path=~/.npmrc
         src=~/.npmrcs/default
         state=link

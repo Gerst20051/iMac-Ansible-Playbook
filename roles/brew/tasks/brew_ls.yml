@@ -1,8 +1,8 @@
 ---
 
-- name: register output from brew ls
+- name: role [{{ role_name }}] register output from brew ls
   shell: brew ls -1
   register: brew_ls
 
-- name: save output from brew ls
+- name: role [{{ role_name }}] save output from brew ls
   local_action: copy content={{ brew_ls.stdout }} dest={{ role_path }}/output/brew_ls.txt

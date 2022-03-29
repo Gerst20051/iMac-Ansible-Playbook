@@ -1,6 +1,6 @@
 ---
 
-# - name: install node versions
+# - name: role [{{ role_name }}] install node versions
 #   shell: >
 #     /bin/bash -c "source ~/.nvm/nvm.sh && nvm install {{ item }}"
 #   with_items: "{{ node_versions_to_install }}"
@@ -17,11 +17,11 @@
 #   "stdout_lines": []
 # }
 
-- name: set the default node version
+- name: role [{{ role_name }}] set the default node version
   shell: >
     /bin/bash -c "source ~/.nvm/nvm.sh && nvm alias default {{ default_node_version_name }}"
 
-- name: update global npm packages
+- name: role [{{ role_name }}] update global npm packages
   npm:
     global: yes
     state: latest
@@ -29,7 +29,7 @@
     executable: ~/.nvm/versions/node/{{ default_node_version }}/bin/npm
     # executable: nvm which default
 
-- name: install node packages globally
+- name: role [{{ role_name }}] install node packages globally
   npm:
     name: "{{ item }}"
     global: yes

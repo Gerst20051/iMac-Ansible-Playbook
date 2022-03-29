@@ -1,4 +1,4 @@
 ---
 
-- name: copy update-notifier-npm template file to disable checking for npm updates
+- name: role [{{ role_name }}] copy update-notifier-npm template file to disable checking for npm updates
   template: src=update-notifier-npm.j2 dest=~/.config/configstore/update-notifier-npm.json

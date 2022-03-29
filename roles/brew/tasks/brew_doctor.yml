@@ -1,12 +1,26 @@
 ---
 
+- name: role [{{ role_name }}] check if brew_doctor file exists
+  stat: path={{ role_path }}/output/brew_doctor.txt
+  register: brew_doctor_stat_result
+  tags: brew_doctor
+
+- name: role [{{ role_name }}] load the contents of brew_doctor file into a variable
+  shell: cat {{ role_path }}/output/brew_doctor.txt
+  register: brew_doctor_content
+  when: brew_doctor_stat_result.stat.exists
+  changed_when: false
+  tags: brew_doctor
+
 # brew doctor is homebrew's own self-diagnosis tool.
 # homebrew will self-diagnose, see if everything works the way it should and report back.
 # it will usually tell you what's wrong in great detail, so that you can help it fix itself very quickly, on the off chance something goes wrong.
-- name: register output from brew doctor
+- name: role [{{ role_name }}] register output from brew doctor
   shell: brew doctor
   register: brew_doctor
-  ignore_errors: true
+  failed_when: false
+  tags: brew_doctor
 
-- name: save output from brew doctor
+- name: role [{{ role_name }}] save output from brew doctor
   local_action: copy content={{ brew_doctor.stderr }} dest={{ role_path }}/output/brew_doctor.txt
+  tags: brew_doctor

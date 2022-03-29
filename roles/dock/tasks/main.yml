@@ -1,29 +1,29 @@
 ---
 
-- name: remove all items from the dock
+- name: role [{{ role_name }}] remove all items from the dock
   shell: dockutil --remove all --no-restart
 
-- name: set the default dock items
+- name: role [{{ role_name }}] set the default dock items
   shell: dockutil --add {{ item }} --no-restart
   with_items: "{{ dock_items }}"
 
-- name: reduce the size of the dock
+- name: role [{{ role_name }}] reduce the size of the dock
   shell: defaults write com.apple.dock tilesize -int 30
 
-- name: disable showing recently opened apps
+- name: role [{{ role_name }}] disable showing recently opened apps
   shell: defaults write com.apple.dock show-recents -bool false
 
-- name: enable dock's auto hide feature
+- name: role [{{ role_name }}] enable dock's auto hide feature
   shell: m dock autohide YES
 
-- name: disable automatically rearrange spaces based on most recent use
+- name: role [{{ role_name }}] disable automatically rearrange spaces based on most recent use
   osx_defaults:
     domain: com.apple.dock
     key: mru-spaces
     type: bool
     value: false
 
-- name: reset launchpad
+- name: role [{{ role_name }}] reset launchpad
   osx_defaults:
     domain: com.apple.dock
     key: ResetLaunchPad
@@ -31,12 +31,12 @@
     value: true
 
 # need to restart the dock after disabling the dashboard
-- name: disable the dashboard
+- name: role [{{ role_name }}] disable the dashboard
   osx_defaults:
     domain: com.apple.dashboard
     key: mcx-disabled
     type: bool
     value: true
 
-- name: restart dock
+- name: role [{{ role_name }}] restart dock
   shell: killall Dock

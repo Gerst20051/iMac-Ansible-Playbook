@@ -1,0 +1,10 @@
+---
+
+# NOTE: brew will automatically run cleanup every 30 days
+# NOTE: `brew cleanup` has not been run in 30 days, running now..
+# https://github.com/Homebrew/brew/blob/654c78c2d7aec2620f006f9e5bd07ec498c32d5d/Library/Homebrew/cleanup.rb#L183
+- name: role [{{ role_name }}] cleanup packages
+  shell: brew cleanup
+  register: brew_cleanup_result
+  changed_when: brew_cleanup_result.stdout != ''
+  tags: brew_cleanup
