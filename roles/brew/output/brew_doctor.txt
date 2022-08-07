@@ -2,6 +2,8 @@ Please note that these warnings are just used to help the Homebrew maintainers
 with debugging if you file an issue. If everything you use Homebrew for is
 working fine: please don't worry or file an issue; just ignore this. Thanks!
 
+Warning: Unknown support status
+
 Warning: Your Command Line Tools are too outdated.
 Update them from Software Update in System Preferences or run:
   softwareupdate --all --install --force
@@ -12,7 +14,7 @@ If that doesn't show you any updates, run:
 
 Alternatively, manually download them from:
   https://developer.apple.com/download/all/.
-You should download the Command Line Tools for Xcode 13.3.
+You should download the Command Line Tools for Xcode 13.4.
 
 
 Warning: A newer Command Line Tools release is available.
@@ -25,13 +27,12 @@ If that doesn't show you any updates, run:
 
 Alternatively, manually download them from:
   https://developer.apple.com/download/all/.
-You should download the Command Line Tools for Xcode 13.3.
+You should download the Command Line Tools for Xcode 13.4.
 
 
 Warning: Some installed formulae are deprecated or disabled.
 You should find replacements for the following formulae:
   grv
-  ilmbase
 
 Warning: Homebrew's "sbin" was not found in your PATH but you have installed
 formulae that put executables in /usr/local/sbin.
