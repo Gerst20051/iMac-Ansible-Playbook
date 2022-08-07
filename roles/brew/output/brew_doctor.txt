@@ -12,7 +12,7 @@ If that doesn't show you any updates, run:
 
 Alternatively, manually download them from:
   https://developer.apple.com/download/all/.
-You should download the Command Line Tools for Xcode 13.2.1.
+You should download the Command Line Tools for Xcode 13.3.
 
 
 Warning: A newer Command Line Tools release is available.
@@ -25,7 +25,7 @@ If that doesn't show you any updates, run:
 
 Alternatively, manually download them from:
   https://developer.apple.com/download/all/.
-You should download the Command Line Tools for Xcode 13.2.1.
+You should download the Command Line Tools for Xcode 13.3.
 
 
 Warning: Some installed formulae are deprecated or disabled.
