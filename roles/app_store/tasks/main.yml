@@ -10,3 +10,17 @@
   with_items: "{{ apps }}"
   register: result
   changed_when: '"is already installed" not in result.stdout'
+
+- name: role [{{ role_name }}] register output from applications ls
+  shell: ls -1 /Applications
+  register: applications_ls
+
+- name: role [{{ role_name }}] save output from applications ls
+  local_action: copy content={{ applications_ls.stdout }} dest={{ role_path }}/output/applications_ls.txt
+
+- name: role [{{ role_name }}] register output from applications user ls
+  shell: ls -1 /Users/andrewgerst/Applications
+  register: applications_user_ls
+
+- name: role [{{ role_name }}] save output from applications user ls
+  local_action: copy content={{ applications_user_ls.stdout }} dest={{ role_path }}/output/applications_user_ls.txt

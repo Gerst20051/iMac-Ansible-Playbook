@@ -1,0 +1,43 @@
+911 Operator.app
+Batman Arkham City GOTY.app
+Blender Game Asset Creation - Training Files.app
+Blender.app
+Call of Duty 4 Modern Warfare.app
+Call of Duty Black Ops - Multiplayer OSX.app
+Call of Duty Modern Warfare 2 - Multiplayer.app
+Call of Duty Modern Warfare 3 - Multiplayer.app
+Chrome Apps.localized
+Counter-Strike Global Offensive.app
+Counter-Strike Source.app
+Counter-Strike.app
+CrossOver
+DEFCON.app
+Deus Ex Human Revolution - Director's Cut.app
+DiRT 3 Complete Edition.app
+Driver San Francisco.app
+Europa Universalis IV.app
+GRID 2.app
+Grand Theft Auto III.app
+Grand Theft Auto San Andreas.app
+Grand Theft Auto Vice City.app
+Hacknet.app
+ImageOptim.app
+Paladins.app
+Plex Media Server.app
+Portal 2.app
+Rise Battle Lines.app
+Rocket League.app
+RollerCoaster Tycoon 3 Platinum!.app
+Sid Meier's Civilization Beyond Earth.app
+Sid Meier's Civilization IV.app
+Sid Meier's Civilization V.app
+Sid Meier's Civilization VI.app
+Tactical Intervention.app
+Team Fortress 2.app
+Trader Workstation
+Two Worlds II.app
+UberStrike.app
+Unity of Command.app
+Uplink.app
+X-Plane 11.app
+itch.app
