@@ -3,6 +3,24 @@
 - name: role [{{ role_name }}] remove all items from the dock
   shell: dockutil --remove all --no-restart
 
+# fatal: [0.0.0.0]: FAILED! => {
+#   "changed": true,
+#   "cmd": "dockutil --remove all --no-restart",
+#   "delta": "0:00:00.028036",
+#   "end": "2022-08-07 14:27:59.458747",
+#   "msg": "non-zero return code",
+#   "rc": 126,
+#   "start": "2022-08-07 14:27:59.430711",
+#   "stderr": "/bin/sh: /usr/local/bin/dockutil: /usr/bin/python: bad interpreter: No such file or directory",
+#   "stderr_lines":
+#   [
+#       "/bin/sh: /usr/local/bin/dockutil: /usr/bin/python: bad interpreter: No such file or directory"
+#   ],
+#   "stdout": "",
+#   "stdout_lines":
+#   []
+# }
+
 - name: role [{{ role_name }}] set the default dock items
   shell: dockutil --add {{ item }} --no-restart
   with_items: "{{ dock_items }}"

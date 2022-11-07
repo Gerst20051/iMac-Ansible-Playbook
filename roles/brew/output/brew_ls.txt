@@ -53,9 +53,11 @@ icu4c
 ilmbase
 imagemagick
 imath
+jasper
 jbig2dec
 jemalloc
 jpeg
+jpeg-turbo
 jpeg-xl
 jq
 lame
@@ -77,6 +79,8 @@ libogg
 libomp
 libpng
 libpthread-stubs
+libpython-tabulate
+libraw
 librist
 libsamplerate
 libsndfile

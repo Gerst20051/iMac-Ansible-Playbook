@@ -22,8 +22,18 @@ An ansible playbook used to maintain an iMac
 
 [$]> `ansible-playbook -v ~/iMac-Ansible-Playbook/playbook.yml -i ~/iMac-Ansible-Playbook/inventory --ask-become-pass`
 
+# Todo List
+
+1. Shell Profile
+1. Add Provision Alias
+1. Set ZSH As Default Shell
+1. Setup Python
+1. Save System Config Output
+
 # Known Issues
 
 TASK [Gathering Facts] **************************************************************************************************************************************************************
 [WARNING]: Platform darwin on host 0.0.0.0 is using the discovered Python interpreter at /usr/bin/python, but future installation of another Python interpreter could change this.
 See https://docs.ansible.com/ansible/2.9/reference_appendices/interpreter_discovery.html for more information.
+
+[DEPRECATION WARNING]: "include" is deprecated, use include_tasks/import_tasks instead. This feature will be removed in version 2.16. Deprecation warnings can be disabled by setting deprecation_warnings=False in ansible.cfg.
