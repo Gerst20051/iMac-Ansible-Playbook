@@ -1,0 +1,27 @@
+---
+
+- name: role [{{ role_name }}] download package control package
+  get_url:
+    url: "https://packagecontrol.io/Package Control.sublime-package"
+    dest: "~/Library/Application Support/Sublime Text 3/Installed Packages/Package Control.sublime-package"
+
+- name: role [{{ role_name }}] register output from installed packages ls
+  shell: ls -1 ~/Library/Application\ Support/Sublime\ Text\ 3/Installed\ Packages
+  register: installed_packages_ls
+
+- name: role [{{ role_name }}] save output from installed packages ls
+  local_action: copy content={{ installed_packages_ls.stdout }} dest={{ role_path }}/output/installed_packages_ls.txt
+
+- name: role [{{ role_name }}] register output from packages ls
+  shell: ls -1 ~/Library/Application\ Support/Sublime\ Text\ 3/Packages
+  register: packages_ls
+
+- name: role [{{ role_name }}] save output from packages ls
+  local_action: copy content={{ packages_ls.stdout }} dest={{ role_path }}/output/packages_ls.txt
+
+- name: role [{{ role_name }}] register output from packages user ls
+  shell: ls -1 ~/Library/Application\ Support/Sublime\ Text\ 3/Packages/User
+  register: packages_user_ls
+
+- name: role [{{ role_name }}] save output from packages user ls
+  local_action: copy content={{ packages_user_ls.stdout }} dest={{ role_path }}/output/packages_user_ls.txt

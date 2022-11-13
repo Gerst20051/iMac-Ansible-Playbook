@@ -38,3 +38,10 @@ Warning: Homebrew's "sbin" was not found in your PATH but you have installed
 formulae that put executables in /usr/local/sbin.
 Consider setting your PATH for example like so:
   echo 'export PATH="/usr/local/sbin:$PATH"' >> /Users/andrewgerst/.bash_profile
+
+Warning: Broken symlinks were found. Remove them with `brew cleanup`:
+  /usr/local/bin/apm
+  /usr/local/bin/atom
+  /usr/local/bin/makemkvcon
+  /usr/local/bin/smerge
+  /usr/local/bin/sublime

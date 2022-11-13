@@ -1,0 +1,10 @@
+Arduino-like IDE
+Material Theme - Appbar
+User
+markupsafe
+mdpopups
+pygments
+pymdownx
+python-jinja2
+python-markdown
+pyyaml
