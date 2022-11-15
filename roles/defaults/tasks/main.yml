@@ -1,0 +1,10 @@
+---
+
+# [$]> defaults read -g com.apple.trackpad.scaling
+# [$]> defaults write -g com.apple.trackpad.scaling 60
+- name: role [{{ role_name }}] increase trackpad tracking speed "trackpad -> point & click -> tracking speed"
+  osx_defaults:
+    domain: NSGlobalDomain
+    key: com.apple.trackpad.scaling
+    type: float
+    value: 60

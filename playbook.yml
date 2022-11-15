@@ -9,6 +9,8 @@
   roles:
     - role: brew
       tags: ['brew']
+    - role: defaults
+      tags: ['defaults']
     - role: node
       tags: ['node']
     - role: app_store
