@@ -8,6 +8,7 @@ brew_packages:
   - jq # lightweight and flexible command-line json processor
   - m-cli # swiss army knife for macos that simplifies the best terminal commands
   - mas # mac app store command line interface
+  - sqlmap # penetration testing for sql injection and database servers
   - zsh # a shell designed for interactive use
 
 brew_cask_packages:
