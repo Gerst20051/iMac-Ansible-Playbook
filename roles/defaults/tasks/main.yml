@@ -6,5 +6,7 @@
   osx_defaults:
     domain: NSGlobalDomain
     key: com.apple.trackpad.scaling
-    type: float
     value: 60
+# fatal: [0.0.0.0]: FAILED! => {"changed": false, "msg": "Type mismatch. Type in defaults: str"}
+# [$]> defaults read-type -g com.apple.trackpad.scaling
+# Type is string

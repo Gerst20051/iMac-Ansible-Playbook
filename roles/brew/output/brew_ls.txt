@@ -15,8 +15,10 @@ dmd
 docbook
 docbook-xsl
 dockutil
+docutils
 double-conversion
 dub
+edencommon
 fb303
 fbthrift
 fd
@@ -49,6 +51,7 @@ graphite2
 grv
 guile
 harfbuzz
+highway
 icu4c
 ilmbase
 imagemagick
@@ -64,6 +67,7 @@ lame
 leptonica
 libarchive
 libass
+libavif
 libb2
 libbluray
 libde265
@@ -89,6 +93,7 @@ libsoxr
 libtasn1
 libtiff
 libtool
+libunibreak
 libunistring
 libvidstab
 libvmaf
@@ -109,6 +114,7 @@ m4
 mas
 mbedtls
 mpdecimal
+mpg123
 mycli
 ncurses
 nettle
@@ -120,15 +126,19 @@ openjpeg
 openssl@1.1
 opus
 p11-kit
+pango
 pcre
 pcre2
 pixman
 pkg-config
 pv
+pygments
 python-tabulate
 python@3.10
+python@3.11
 python@3.8
 python@3.9
+pyyaml
 rav1e
 readline
 rtmpdump
@@ -142,6 +152,7 @@ snappy
 speex
 sphinx-doc
 sqlite
+sqlmap
 srt
 tcl-tk
 tesseract
@@ -166,9 +177,4 @@ zeromq
 zimg
 zsh
 zstd
-atom
-makemkv
-muzzle
-qbittorrent
-sublime-merge
-transmission
+sublime-text
