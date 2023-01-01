@@ -1,5 +1,6 @@
 ---
 
+# [$]> brew update
 # brew update is for updating homebrew (downloads new "formulae" but won't upgrade the installed software)
 - name: role [{{ role_name }}] update homebrew
   homebrew:
@@ -22,6 +23,8 @@
 # CI systems (which should instead be fixed to not use shallow clones). Sorry for
 # the inconvenience!
 
+# [$]> brew upgrade
+# [$]> brew upgrade --cask
 # brew upgrade is for updating installed software
 - name: role [{{ role_name }}] upgrade homebrew
   homebrew:

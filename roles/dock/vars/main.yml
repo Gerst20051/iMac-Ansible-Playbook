@@ -3,12 +3,12 @@
 dock_items:
   - "'' --type spacer --section apps"
   - /Applications/Google\ Chrome.app
-  - /Applications/Spotify.app
+  # - /Applications/Spotify.app
   - /Applications/iTerm.app
   - /Applications/Sublime\ Text.app
   - /Applications/Visual\ Studio\ Code.app
-  - /Applications/Xcode.app
-  - /Applications/TablePlus.app
+  # - /Applications/Xcode.app
+  # - /Applications/TablePlus.app
   - /Applications/Cyberduck.app
   - /Applications/Paw.app
   - "'' --type spacer --section apps"

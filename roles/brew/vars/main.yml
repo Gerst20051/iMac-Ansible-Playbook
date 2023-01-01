@@ -1,5 +1,9 @@
 ---
 
+# https://formulae.brew.sh
+# https://formulae.brew.sh/formula/dockutil
+# https://formulae.brew.sh/cask/sublime-text
+
 brew_packages:
   - dockutil # command line tool for managing dock items
   - git # distributed version control system
@@ -12,4 +16,8 @@ brew_packages:
   - zsh # a shell designed for interactive use
 
 brew_cask_packages:
-  - muzzle # a simple mac app to silence embarrassing notifications while screensharing
+  # - muzzle # a simple mac app to silence embarrassing notifications while screensharing
+  - sublime-text # text editor for code, markup and prose
+
+# remove installed casks
+# [$]> brew rm --cask atom makemkv muzzle qbittorrent sublime-merge transmission

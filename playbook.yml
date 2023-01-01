@@ -11,6 +11,8 @@
       tags: ['brew']
     - role: defaults
       tags: ['defaults']
+    - role: sublime
+      tags: ['sublime']
     - role: node
       tags: ['node']
     - role: app_store

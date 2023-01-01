@@ -1,5 +1,7 @@
 ---
 
+# [$]> brew ls -1 --formula
+# [$]> brew ls -1 --cask
 - name: role [{{ role_name }}] register output from brew ls
   shell: brew ls -1
   register: brew_ls
