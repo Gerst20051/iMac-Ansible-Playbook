@@ -32,8 +32,4 @@ An ansible playbook used to maintain an iMac
 
 # Known Issues
 
-TASK [Gathering Facts] **************************************************************************************************************************************************************
-[WARNING]: Platform darwin on host 0.0.0.0 is using the discovered Python interpreter at /usr/local/bin/python3.10, but future installation of another Python interpreter could
-change the meaning of that path. See https://docs.ansible.com/ansible-core/2.13/reference_appendices/interpreter_discovery.html for more information.
-
 [DEPRECATION WARNING]: "include" is deprecated, use include_tasks/import_tasks instead. This feature will be removed in version 2.16. Deprecation warnings can be disabled by setting deprecation_warnings=False in ansible.cfg.
