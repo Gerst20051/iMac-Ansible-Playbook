@@ -1,25 +1,15 @@
 ---
 
+# NOTE: switched to a cask that was rewritten in swift to fix the following error
+# [$]> brew install --cask hpedrorodrigues/tools/dockutil
+# https://github.com/hpedrorodrigues/homebrew-tools/blob/master/Casks/dockutil.rb
+# https://github.com/kcrawford/dockutil/issues/127
+# https://github.com/kcrawford/dockutil/issues/111
+# https://github.com/kcrawford/dockutil/issues/85
+# /bin/sh: /usr/local/bin/dockutil: /usr/bin/python: bad interpreter: No such file or directory
+
 - name: role [{{ role_name }}] remove all items from the dock
   shell: dockutil --remove all --no-restart
-
-# fatal: [0.0.0.0]: FAILED! => {
-#   "changed": true,
-#   "cmd": "dockutil --remove all --no-restart",
-#   "delta": "0:00:00.028036",
-#   "end": "2022-08-07 14:27:59.458747",
-#   "msg": "non-zero return code",
-#   "rc": 126,
-#   "start": "2022-08-07 14:27:59.430711",
-#   "stderr": "/bin/sh: /usr/local/bin/dockutil: /usr/bin/python: bad interpreter: No such file or directory",
-#   "stderr_lines":
-#   [
-#       "/bin/sh: /usr/local/bin/dockutil: /usr/bin/python: bad interpreter: No such file or directory"
-#   ],
-#   "stdout": "",
-#   "stdout_lines":
-#   []
-# }
 
 - name: role [{{ role_name }}] set the default dock items
   shell: dockutil --add {{ item }} --no-restart

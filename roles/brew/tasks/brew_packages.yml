@@ -1,6 +1,6 @@
 ---
 
-# [$]> brew install dockutil
+# [$]> brew install mas
 - name: role [{{ role_name }}] install packages
   homebrew:
     name: '{{ brew_packages }}'
@@ -8,6 +8,7 @@
   tags:
     - install_brew
 
+# NOTE: Running installer for dockutil; your password may be necessary.
 # [$]> brew install --cask sublime-text
 - name: role [{{ role_name }}] install cask packages
   homebrew_cask:

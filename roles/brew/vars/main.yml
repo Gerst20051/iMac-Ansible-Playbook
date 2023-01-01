@@ -5,7 +5,6 @@
 # https://formulae.brew.sh/cask/sublime-text
 
 brew_packages:
-  - dockutil # command line tool for managing dock items
   - git # distributed version control system
   - go # open source programming language designed at google
   - gource # software version control visualization
@@ -16,6 +15,7 @@ brew_packages:
   - zsh # a shell designed for interactive use
 
 brew_cask_packages:
+  - hpedrorodrigues/tools/dockutil # command line utility for managing macos dock items
   # - muzzle # a simple mac app to silence embarrassing notifications while screensharing
   - sublime-text # text editor for code, markup and prose
 

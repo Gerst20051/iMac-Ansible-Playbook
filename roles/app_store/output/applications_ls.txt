@@ -1,159 +1,31 @@
 3Hub.app
-Affinity Designer.app
-Affinity Photo.app
-Amphetamine.app
-Android Studio.app
-Angular Console.app
-Arduino.app
-Atom.app
-Audacity
-Aviation Exam.app
-Blackmagic Disk Speed Test.app
-Blender
 Boom 3D.app
-Brave.app
 CCleaner.app
-Caffeine.app
-Chroma.app
-Cinch.app
-Cisco Webex Meetings.app
-ColorSnapper2.app
-Compressor.app
 Cyberduck.app
-DaVinci Resolve
-Datum - Lite.app
-Discord.app
 DivX
 Docker.app
-Downcast.app
 Dropbox.app
-Dynamo.app
-EaseUS Data Recovery Wizard.app
 EmbyServer.app
-Enjoy2.app
-Epic Games Launcher.app
-Exodus.app
-Fantastical.app
-Final Cut Pro.app
-Flight Review Prep.app
-FltPlan Go.app
-FreeTelly.app
-FrostWire.app
-GIMP.app
-GarageBand.app
-Geekbench 3.app
-Geekbench 4.app
-GoPro Quik.app
 Google Chrome.app
-HD Play for Audible Audiobooks.app
-Heaven.app
-IP Scanner Pro.app
-Icon Set Creator.app
-Iris.app
-Jaxx.app
 Jolt of Caffeine.app
-Joystick Mapper.app
-Kanban Task Board.app
-Keynote.app
-Kindle.app
 Kodi.app
-LiveFlight Connect.app
-LogTen.app
-Logic Pro X.app
 MacFamilyTree 10.app
 MacFamilyTree 8.app
 MacFamilyTree 9.app
 Magnet.app
-MainStage 3.app
-MakeMKV.app
-Memory Diag.app
-Mermoz.app
-MongoHub.app
-Motion.app
-Muzzle.app
-MySQLWorkbench.app
-Myriad.app
-NetAdmin Pro.app
-Numbers.app
-OBS.app
 OpenEmu.app
-OpenVPN
-Pages.app
 Paw.app
-Pepperstone.app
-Phoenix.app
-PicGIF.app
-Pixel Winch.app
-PixelStick.app
-Pixelmator.app
 Plex Media Player.app
 Plex Media Server.app
 Plex.app
-PodGrasp.app
 Postman.app
-Private Pilot Oral Prep.app
-QuickLens.app
-Quiver.app
-Razer Synapse.app
-Realm Browser.app
 RetroArch.app
-Reveal.app
 Safari.app
-Scanz.app
-Screenium 3.app
 Sequel Pro.app
-SizeUp.app
-Sketch.app
-Skitch.app
-Skype.app
 Slack.app
-Sound Siphon.app
-Spotify.app
-Spreaker Studio.app
-Steam.app
-Stellarium.app
-Stockfolio.app
-StocksToTrade.app
-Sublime Merge.app
 Sublime Text.app
-Syncios.app
-SyphonInject.app
-TI-Diagnostic.App
-TI-SmartView TI-84 Plus.App
-TablePlus.app
-Telegram Lite.app
-Telegram.app
-The Archive Browser.app
-The Unarchiver.app
-ThinkForex Trader.app
-TorBrowser.app
-Trader Workstation
-Transmission.app
-TurboTax 2015.app
-TweetDeck.app
-TwistedWave.app
-Twitch.app
-Twitter.app
-Ultra Character Map.app
-Unity
-Unity Download Assistant.app
 Utilities
-VLC.app
-VNC Viewer.app
-VirtualBox.app
 Visual Studio Code.app
-Wireshark.app
-Writed.app
 Xcode.app
-Zoom It.app
-fxTrade.app
-fxTradePractice.app
-iExplorer.app
-iMovie.app
-iMuscle 2.app
-iOS App Signer.app
 iTerm.app
 meshlab.app
-qBittorrent.app
-smcFanControl.app
-zoom.us.app

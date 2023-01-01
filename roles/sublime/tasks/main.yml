@@ -1,9 +1,12 @@
 ---
 
+# https://packagecontrol.io/Package Control.sublime-package
 - name: role [{{ role_name }}] download package control package
   get_url:
-    url: "https://packagecontrol.io/Package Control.sublime-package"
+    url: https://packagecontrol.io/{{ 'Package Control' | urlencode }}.sublime-package
     dest: "~/Library/Application Support/Sublime Text 3/Installed Packages/Package Control.sublime-package"
+
+# fatal: [0.0.0.0]: FAILED! => {"changed": false, "dest": "/Users/andrewgerst/Library/Application Support/Sublime Text 3/Installed Packages/Package Control.sublime-package", "elapsed": 0, "gid": 20, "group": "staff", "mode": "0644", "msg": "An unknown error occurred: URL can't contain control characters. '/Package Control.sublime-package' (found at least ' ')", "owner": "andrewgerst", "size": 471464, "state": "file", "uid": 501, "url": "https://packagecontrol.io/Package Control.sublime-package"}
 
 - name: role [{{ role_name }}] register output from installed packages ls
   shell: ls -1 ~/Library/Application\ Support/Sublime\ Text\ 3/Installed\ Packages
