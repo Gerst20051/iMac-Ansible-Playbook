@@ -31,5 +31,3 @@ An ansible playbook used to maintain an iMac
 1. Save System Config Output
 
 # Known Issues
-
-[DEPRECATION WARNING]: "include" is deprecated, use include_tasks/import_tasks instead. This feature will be removed in version 2.16. Deprecation warnings can be disabled by setting deprecation_warnings=False in ansible.cfg.

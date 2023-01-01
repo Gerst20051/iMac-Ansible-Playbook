@@ -1,7 +1,7 @@
 ---
 
-- include: config.yml
-- include: npmrc.yml
-- include: nvm.yml
-- include: node.yml
-- include: npm_ls.yml
+- import_tasks: config.yml
+- import_tasks: npmrc.yml
+- import_tasks: nvm.yml
+- import_tasks: node.yml
+- import_tasks: npm_ls.yml

@@ -1,7 +1,7 @@
 ---
 
-- include: brew_doctor.yml
-- include: brew_up_to_date.yml
-- include: brew_packages.yml
-- include: brew_ls.yml
-- include: brew_cleanup.yml
+- import_tasks: brew_doctor.yml
+- import_tasks: brew_up_to_date.yml
+- import_tasks: brew_packages.yml
+- import_tasks: brew_ls.yml
+- import_tasks: brew_cleanup.yml
