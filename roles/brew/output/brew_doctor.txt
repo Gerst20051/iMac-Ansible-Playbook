@@ -2,11 +2,10 @@ Please note that these warnings are just used to help the Homebrew maintainers
 with debugging if you file an issue. If everything you use Homebrew for is
 working fine: please don't worry or file an issue; just ignore this. Thanks!
 
-Warning: Unknown support status
+Warning: No Cask quarantine support available: unknown reason.
 
 Warning: Your Command Line Tools are too outdated.
-Update them from Software Update in System Preferences or run:
-  softwareupdate --all --install --force
+Update them from Software Update in System Preferences.
 
 If that doesn't show you any updates, run:
   sudo rm -rf /Library/Developer/CommandLineTools
@@ -18,8 +17,7 @@ You should download the Command Line Tools for Xcode 13.4.
 
 
 Warning: A newer Command Line Tools release is available.
-Update them from Software Update in System Preferences or run:
-  softwareupdate --all --install --force
+Update them from Software Update in System Preferences.
 
 If that doesn't show you any updates, run:
   sudo rm -rf /Library/Developer/CommandLineTools
@@ -30,7 +28,8 @@ Alternatively, manually download them from:
 You should download the Command Line Tools for Xcode 13.4.
 
 
-Warning: Some installed formulae are deprecated or disabled.
+Warning: Some installed kegs have no formulae!
+This means they were either deleted or installed manually.
 You should find replacements for the following formulae:
   grv
 
@@ -42,6 +41,4 @@ Consider setting your PATH for example like so:
 Warning: Broken symlinks were found. Remove them with `brew cleanup`:
   /usr/local/bin/apm
   /usr/local/bin/atom
-  /usr/local/bin/makemkvcon
-  /usr/local/bin/smerge
-  /usr/local/bin/sublime
+  /usr/local/opt/libpython-tabulate
