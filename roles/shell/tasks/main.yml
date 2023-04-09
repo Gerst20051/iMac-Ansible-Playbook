@@ -24,3 +24,4 @@
 
 - name: role [{{ role_name }}] copy passport makefile to home directory
   copy: src=PassportMakefile dest=~/Makefile
+  when: false
