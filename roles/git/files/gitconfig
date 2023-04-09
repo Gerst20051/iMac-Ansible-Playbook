@@ -1,0 +1,11 @@
+[user]
+    name = Andrew Gerst
+    email = gerst20051@gmail.com
+[core]
+    excludesfile = ~/.gitignore
+[push]
+    default = simple
+[merge]
+    conflictstyle = diff3
+[pull]
+    rebase = true

@@ -21,6 +21,8 @@
       tags: ['app_store']
     - role: dock
       tags: ['dock']
+    - role: git
+      tags: ['git']
 
   tasks:
     - name: display message

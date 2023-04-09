@@ -1,0 +1,7 @@
+---
+
+- name: role [{{ role_name }}] copy git config files to home directory
+  copy: src={{ item }} dest=~/.{{ item }}
+  with_items:
+    - gitconfig
+    - gitignore

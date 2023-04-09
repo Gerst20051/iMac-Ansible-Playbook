@@ -1,0 +1,44 @@
+# OS Generated Files #
+######################
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+Icon?
+!icon
+!Icons
+ehthumbs.db
+Thumbs.db
+
+# Compiled Source #
+###################
+*.com
+*.class
+*.dll
+# *.exe
+*.o
+*.so
+
+# Packages #
+############
+*.7z
+*.dmg
+*.gz
+*.iso
+*.jar
+*.rar
+*.tar
+# *.zip
+
+# Logs and Databases #
+######################
+*.log
+# *.sql
+# *.sqlite
+
+# Config Files #
+################
+ignore/
+config.php
+mysql.config.php
