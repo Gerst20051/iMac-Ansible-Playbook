@@ -23,6 +23,8 @@
       tags: ['dock']
     - role: git
       tags: ['git']
+    - role: shell
+      tags: ['shell']
 
   tasks:
     - name: display message

@@ -1,0 +1,26 @@
+---
+
+- name: role [{{ role_name }}] copy shell files to home directory
+  copy: src={{ item }}.sh dest=~/.{{ item }}
+  with_items:
+    - bash_aliases
+    - bash_customfunctions
+    - bash_functions
+    - bash_passportparking_deprecated
+    - bash_passportparking_legacy
+    - bash_passportparking_main
+    - bash_passportparking_misc
+    - bash_passportparking_modern
+    - bash_passportparking_ssh
+    - bash_profile
+    - bash_prompts
+    - bashrc
+    - zshrc
+
+- name: role [{{ role_name }}] copy shell template files to home directory
+  template: src={{ item }}.sh dest=~/.{{ item }}
+  with_items:
+    - bash_exports
+
+- name: role [{{ role_name }}] copy passport makefile to home directory
+  copy: src=PassportMakefile dest=~/Makefile

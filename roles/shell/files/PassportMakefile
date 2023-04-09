@@ -1,0 +1,385 @@
+#MMMMMMMMMM$==~~~==+8MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
+#MMMMMMMMM?~==~~~=~==?MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
+#MMMMMMM$+~~~~~~~~~~~=+NMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
+#MMMMMM?=~~~~~~~~~~~~~==+MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
+#MMMMZ===~~~~~~~~~~~~~~~==$MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
+#MMD+~~=~~~~~~~~~~~~~~~~~===MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
+#M+=~~~~~~~~~~~~~~~~~====~~==IMMMMMMMMMMMM        MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
+#M++==~~~=~~~~~=~~=~I$$$?~==++?$MMMMMMMMMM    ML    MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM    MMMMM
+#M?+++++++======~IZOO8DDDDN7++++?MMMMMMMMM    MMM    M       MMMM      NMM       MM       NMMMN      MMM              MMM
+#MMD++++++++++++INNDNN$NNDDN$+++++7MMMMMMM    MMM    M        M        MM        M          M         MM              MMM
+#MMMM+++++++++++DDDD+++++8NDN??+++++MMMMMM    MF    MMMMMMM   M     OMMMM    OMMMM    MML   N    MM    M    MMMM    MMMMM
+#MMMMMM+?????+?+NDN+????+?DDD++????+7MMMMM         NMM        MMM      MMM      MM    MMM   N   OMMO   M    MMMM    MMMMM
+#MMMMMMM$??????+NDD+??++?7DDN+????+?NMMMMM    MMMMMMM    MM   MMMMMD    MMMMD    M    MMF   N    MM    M    MMMM    MMMMM
+#MMMMMMMMM??????NDD+??O?NNDNO?????+MMMMMMM    MMMMMMM         M         M        M          MM        MM    MMMM      MMM
+#MMMMMMMMMMZ????NDN?DDDDDDDD?????$MMMMMMMM    MMMMMMMM        M        MM      MMM        MMMMM      MMM    MMMMM     MMM
+#MMMMMMMMMMMM???NND?$DDDNZ?????+MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM    MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
+#MMMMMMMMMMMMM8?NND???O???????8MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM    MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
+#MMMMMMMMMMMMMMMNDN?????????ZMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
+#MMMMMMMMMMMMMMMMMN??????I?MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
+#MMMMMMMMMMMMMMMMMM8I????DMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
+#MMMMMMMMMMMMMMMMMMMMN8NMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
+#MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
+#MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
+
+
+#########################################################################################################################
+# Vars
+#########################################################################################################################
+
+SHELL := /bin/bash
+GITLAB_USERNAME := andrew
+GITLAB_PRIVATE_TOKEN := placeholder
+VAGRANT_HOSTNAME := passport-vagrant-image
+VAGRANT_IP_ADDRESS := 192.168.111.111
+HOME_DIR := ~/Web/
+PASSPORT_DIR_NAME := PP
+PASSPORT_DIR := $(HOME_DIR)$(PASSPORT_DIR_NAME)/
+PASSPORT_CODE_DIR := $(PASSPORT_DIR)Code/
+
+
+#########################################################################################################################
+# Help
+#########################################################################################################################
+
+# Usage information
+# Use: make all
+all:
+    @echo -e "\n  A repository build and management tool."
+
+    @echo -e "\n  Commands"
+    @echo "    make vpn                                        - Configures VPN access. Run this before running 'make build'"
+    @echo "    make build                                      - Build almost everything from the ground up"
+    @echo "    make repositories                               - Clone and setup all repos and directories"
+    @echo "    make composer                                   - Download, install, and run composer"
+    @echo "    make git                                        - Initialize and update git submodules"
+    @echo "    make configure                                  - Copy ppconfig template config files"
+    @echo "    make vagrant                                    - Download and install vagrant"
+
+    @echo -e "\n  VPN Access"
+    @echo "    make vpn-password                               - Generate a secure password hash used to connect to vpn server"
+    @echo "    make vpn-hostsfile                              - Adds vpn ip address to hosts file"
+
+    @echo -e "\n  Repositories"
+    @echo "    make directory-structure                        - Download and install composer"
+    @echo "    make clone-repos                                - Clone all repos from gitlab"
+    @echo "    make move-repos                                 - Move repos into the correct directories"
+
+    @echo -e "\n  Composer"
+    @echo "    make composer-setup                             - Download and install composer"
+    @echo "    make composer-dep                               - Install composer dependencies"
+    @echo "    make composer-install                           - Perform a 'composer install'"
+
+    @echo -e "\n  Git Submodules"
+    @echo "    make git-submodules                             - Initialize all git submodules in our repos"
+    @echo "    make git-submodules-update                      - Update all git submodules in our repos"
+
+    @echo -e "\n  Configure"
+    @echo "    make ppconfig-files                             - Copy ppconfig template config files"
+
+    @echo -e "\n  Vagrant"
+    @echo "    make vagrant-hostsfile                          - Add vagrant machine to hosts file"
+    @echo "    make homebrew-install                           - Download and install homebrew"
+    @echo "    make homebrew-update                            - Update homebrew"
+    @echo "    make cask-install                               - Download and install brewcask"
+    @echo "    make vagrant-install                            - Download and install vagrant"
+    @echo "    make virtualbox-install                         - Download and install virtualbox"
+    @echo "    make vagrant-plugins                            - Download and install vagrant plugins"
+    @echo "    make vagrant-sudoers                            - Add vagrant privileges to sudoers file"
+    @echo "    make ansible-install                            - Download and install ansible"
+    @echo "    make vagrant-ssh-config                         - Add vagrant to ssh config file"
+    @echo "    make vagrant-setup                              - Run vagrant setup script"
+    @echo "    make vagrant-build                              - Run vagrant up / provision"
+    @echo "    make vagrant-provision                          - Run vagrant provision"
+
+# Give help
+# Use: make help
+help: all
+
+
+#########################################################################################################################
+# Entry Point Commands
+#########################################################################################################################
+
+# Configure VPN Access
+# Use: make vpn
+vpn: vpn-password vpn-hostsfile
+
+# Build almost everything from the ground up
+# Use: make build
+build: vpn-hostsfile repositories composer git configure vagrant
+
+# Clone and setup all repos and directories
+# Use: make repositories
+repositories: directory-structure clone-repos move-repos
+
+# Download, install, and run composer
+# Use: make composer
+composer: composer-setup composer-dep
+
+# Initialize and update git submodules
+# Use: make git
+git: git-submodules git-submodules-update
+
+# Copy ppconfig template config files
+# Use: make configure
+configure: ppconfig-files
+
+# Download and build vagrant, ansible, and dependencies
+# Use: make vagrant
+vagrant: vagrant-hostsfile homebrew-install homebrew-update cask-install vagrant-install virtualbox-install vagrant-plugins vagrant-sudoers ansible-install vagrant-setup vagrant-build
+
+
+#########################################################################################################################
+# VPN Access
+#########################################################################################################################
+
+# Generate a secure password hash used to connect to vpn server
+# Use: make vpn-password
+vpn-password:
+    { set -e; \
+        read -s -p "Password: " _password; \
+        export _salt=$$(openssl rand 1000 | strings | grep -io [0-9A-Za-z\.\/] | head -n 16 | tr -d '\n' ); \
+        export _password=$$_password; \
+        echo $$(perl -e 'print crypt("$$ENV{'_password'}","\$$6\$$"."$$ENV{'_salt'}"."\$$")'); \
+        unset _password; \
+        unset _salt; \
+    }
+
+# Adds vpn ip address to hosts file
+# Use: make vpn-hostsfile
+vpn-hostsfile:
+    if [ $$(cat /etc/hosts | grep gitlab\.pdev\.io | wc -l) -eq 0 ]; then \
+        echo "" >> /etc/hosts; \
+        echo "10.0.110.200 gitlab.pdev.io" >> /etc/hosts; \
+        echo "10.0.110.200 ci.pdev.io" >> /etc/hosts; \
+        echo "10.0.110.100 utility.pdev.io" >> /etc/hosts; \
+        echo "10.0.110.210 logstash.pdev.io" >> /etc/hosts; \
+        echo "10.0.110.206 devblog.pdev.io" >> /etc/hosts; \
+        echo "10.0.110.208 sonarqube.pdev.io" >> /etc/hosts; \
+        echo "10.0.110.208 codequality.pdev.io" >> /etc/hosts; \
+        echo "10.0.110.100 composer.pdev.io" >> /etc/hosts; \
+    else \
+        echo VPN already added to hosts file; \
+    fi
+
+
+#########################################################################################################################
+# Repositories
+#########################################################################################################################
+
+# Setup directory structure
+# Use: make directory-structure
+directory-structure:
+    cd $(HOME_DIR); mkdir -p $(PASSPORT_DIR_NAME)
+    cd $(PASSPORT_DIR); \
+    for directory in Android Code Eclipse Infrastructure PassportQA Playground Swift Team Titanium Vagrant; do \
+        mkdir -p $$directory; \
+    done
+
+# Clone all repos from gitlab
+# Use: make clone-repos
+clone-repos:
+    { set -e; \
+        repos_response=$$(curl -s --header "PRIVATE-TOKEN: $(GITLAB_PRIVATE_TOKEN)" --header "SUDO: $(GITLAB_USERNAME)" "http://gitlab.pdev.io/api/v3/projects/?per_page=100" | tr "," "\n" | tr -d '"' | grep "ssh_url_to_repo"); \
+        if [ $$(echo "$$repos_response" | grep ":passportqa/" | wc -l) -gt 0 ]; then \
+            cd $(PASSPORT_DIR)PassportQA; \
+            echo "$$repos_response" | grep ":passportqa/" | awk -F":" '{print $$2":"$$3;}' | while read repo; do git clone `echo $$repo | sed -e 's/git@gitlab.pdev.io/pp-gitlab/'`; done; \
+        else \
+            rmdir $(PASSPORT_DIR)PassportQA; \
+        fi; \
+        if [ $$(echo "$$repos_response" | grep ":infrastructure/" | wc -l) -gt 0 ]; then \
+            cd $(PASSPORT_DIR)Infrastructure; \
+            echo "$$repos_response" | grep ":infrastructure/" | awk -F":" '{print $$2":"$$3;}' | while read repo; do git clone `echo $$repo | sed -e 's/git@gitlab.pdev.io/pp-gitlab/'`; done; \
+        else \
+            rmdir $(PASSPORT_DIR)Infrastructure; \
+        fi; \
+        cd $(PASSPORT_DIR)Team; echo "$$repos_response" | grep ":andrew/\|:davidweber/" | awk -F":" '{print $$2":"$$3;}' | while read repo; do git clone `echo $$repo | sed -e 's/git@gitlab.pdev.io/pp-gitlab/'`; done; \
+        cd $(PASSPORT_CODE_DIR); echo "$$repos_response" | grep ":passport-parking/" | awk -F":" '{print $$2":"$$3;}' | while read repo; do git clone `echo $$repo | sed -e 's/git@gitlab.pdev.io/pp-gitlab/'`; done; \
+    }
+
+# Move repos into the correct directories
+# Use: make move-repos
+move-repos:
+    @echo moving vagrant repo
+    cd $(PASSPORT_DIR)Team; \
+    for repo in vagrant-server; do \
+        if [ -d $$repo ]; then \
+            echo $$repo && mv $$repo $(PASSPORT_DIR)Vagrant; \
+        else \
+            echo $$repo has already been moved; \
+        fi; \
+    done
+
+    @echo moving swift repos
+    cd $(PASSPORT_CODE_DIR); \
+    for repo in iosmobilepay-swift; do \
+        if [ -d $$repo ]; then \
+            echo $$repo && mv $$repo $(PASSPORT_DIR)Swift; \
+        else \
+            echo $$repo has already been moved; \
+        fi; \
+    done
+
+    @echo moving titanium repos
+    cd $(PASSPORT_CODE_DIR); \
+    for repo in iosmobilepay; do \
+        if [ -d $$repo ]; then \
+            echo $$repo && mv $$repo $(PASSPORT_DIR)Titanium; \
+        else \
+            echo $$repo has already been moved; \
+        fi; \
+    done
+
+    @echo moving eclipse repos
+    cd $(PASSPORT_CODE_DIR); \
+    for repo in rmcclient superpassport validationclient; do \
+        if [ -d $$repo ]; then \
+            echo $$repo && mv $$repo $(PASSPORT_DIR)Eclipse; \
+        else \
+            echo $$repo has already been moved; \
+        fi; \
+    done
+
+    @echo moving android repos
+    cd $(PASSPORT_CODE_DIR); \
+    for repo in androidmobilepay bluelib-android bluetoothle opsmanmobile; do \
+        if [ -d $$repo ]; then \
+            echo $$repo && mv $$repo $(PASSPORT_DIR)Android; \
+        else \
+            echo $$repo has already been moved; \
+        fi; \
+    done
+
+
+#########################################################################################################################
+# Composer
+#########################################################################################################################
+
+# Setup composer
+# Use: make composer-setup
+composer-setup:
+    curl -sS https://getcomposer.org/installer | php && mv composer.phar /usr/local/bin/composer
+
+# Install composer dependencies
+# Use: composer-dep
+composer-dep:
+    for repo in api delayedproc passportmailer rmc shared; do \
+        echo $$repo; cd $(PASSPORT_CODE_DIR)$$repo; composer install; \
+    done
+
+# Run 'composer install'
+# Use: make composer-install
+composer-install:
+    composer install
+
+
+#########################################################################################################################
+# Git Submodules
+#########################################################################################################################
+
+# Initialize and update git submodules
+# Use: make git-submodules
+git-submodules:
+    for repo in Swift/iosmobilepay-swift Titanium/iosmobilepay; do \
+        echo $$repo; cd $(PASSPORT_DIR)$$repo; git submodule update --init --recursive; \
+    done
+
+# Update git submodules
+# Use: make git-submodules-update
+git-submodules-update:
+    for repo in Swift/iosmobilepay-swift Titanium/iosmobilepay; do \
+        echo $$repo; cd $(PASSPORT_DIR)$$repo; git submodule update --remote --merge; \
+    done
+
+
+#########################################################################################################################
+# Configure
+#########################################################################################################################
+
+# Copy ppconfig template config files
+# Use: make ppconfig-files
+ppconfig-files:
+    cd $(PASSPORT_CODE_DIR)ppconfig/config/vbimage; \
+    for file in config.template.js dbconfig.template.php rateengineconfig.template.py vbimageconfig.template.php; do \
+        echo $$file; \
+        if [ ! -f $${file/\.template/} ]; then \
+            echo $${file/\.template/}; cp $$file $${file/\.template/}; \
+        else \
+            echo $${file/\.template/} already exists; \
+        fi; \
+    done
+
+
+#########################################################################################################################
+# Vagrant
+#########################################################################################################################
+
+vagrant-hostsfile:
+    if [ $$(cat /etc/hosts | grep "$(VAGRANT_IP_ADDRESS) $(VAGRANT_HOSTNAME)" | wc -l) -eq 0 ]; then \
+        echo "" >> /etc/hosts; \
+        echo "$(VAGRANT_IP_ADDRESS) $(VAGRANT_HOSTNAME)" >> /etc/hosts; \
+    else \
+        echo Vagrant already added to hosts file; \
+    fi
+
+homebrew-install:
+    if [ $$(which brew | wc -l) -eq 0 ]; then \
+        ruby -e "$$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"; \
+    else \
+        cd $$(brew --prefix) && git fetch --all && git reset --hard origin/master && brew update; \
+    fi
+
+homebrew-update:
+    brew update && brew cleanup && brew cask cleanup
+
+cask-install:
+    brew install caskroom/cask/brew-cask
+
+vagrant-install:
+    brew cask install vagrant
+
+virtualbox-install:
+    brew cask install virtualbox
+
+vagrant-plugins:
+    vagrant plugin install vagrant-bindfs
+    vagrant plugin install vagrant-cachier
+
+vagrant-sudoers:
+    if [ $$(cat /etc/sudoers | grep VAGRANT | wc -l) -eq 0 ]; then \
+        echo "" >> /etc/sudoers; \
+        echo "# Vagrant" >> /etc/sudoers; \
+        echo "Cmnd_Alias VAGRANT_EXPORTS_ADD = /usr/bin/tee -a /etc/exports" >> /etc/sudoers; \
+        echo "Cmnd_Alias VAGRANT_NFSD = /sbin/nfsd restart" >> /etc/sudoers; \
+        echo "Cmnd_Alias VAGRANT_EXPORTS_REMOVE = /usr/bin/sed -E -e /*/ d -ibak /etc/exports" >> /etc/sudoers; \
+        echo "%admin ALL=(root) NOPASSWD: VAGRANT_EXPORTS_ADD, VAGRANT_NFSD, VAGRANT_EXPORTS_REMOVE" >> /etc/sudoers; \
+    else \
+        echo Vagrant already added to sudoers file; \
+    fi
+
+ansible-install:
+    easy_install pip
+    pip install ansible
+
+vagrant-ssh-config:
+    if [ $$(cat ~/.ssh/config | grep insecure_private_key | wc -l) -eq 0 ]; then \
+        echo "" >> ~/.ssh/config; \
+        echo "Host vagrant" >> ~/.ssh/config; \
+        echo "User vagrant" >> ~/.ssh/config; \
+        echo "HostName $(VAGRANT_HOSTNAME)" >> ~/.ssh/config; \
+        echo "IdentityFile ~/.vagrant.d/insecure_private_key" >> ~/.ssh/config; \
+    else \
+        echo Vagrant already added to ssh config file; \
+    fi
+
+vagrant-setup:
+    cd $(PASSPORT_DIR)Vagrant/vagrant-server; ./setup.sh
+
+vagrant-build:
+    cd $(PASSPORT_DIR)Vagrant/vagrant-server; vagrant up
+
+vagrant-provision:
+    cd $(PASSPORT_DIR)Vagrant/vagrant-server; vagrant provision
+
+# vim:ft=make
