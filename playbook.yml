@@ -13,6 +13,8 @@
       tags: ['defaults']
     - role: sublime
       tags: ['sublime']
+    - role: vim
+      tags: ['vim']
     - role: node
       tags: ['node']
     - role: app_store

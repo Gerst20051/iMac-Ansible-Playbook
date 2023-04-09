@@ -1,0 +1,16 @@
+---
+
+- name: role [{{ role_name }}] copy vim config files to home directory
+  copy: src={{ item }}.vim dest=~/.{{ item }}
+  with_items:
+    - vimrc
+
+- name: role [{{ role_name }}] copy vim color files to ~/.vim directory
+  copy: src=colors/{{ item }}.vim dest=~/.vim/colors/{{ item }}.vim
+  with_items:
+    - distinguished
+    - grb256
+    - jellybeans
+    - railcasts
+    - solarized
+    - vividchalk
