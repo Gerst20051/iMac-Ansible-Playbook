@@ -1,0 +1,4 @@
+---
+
+- name: role [{{ role_name }}] copy ssh config file to ~/.ssh directory
+  copy: src=config dest=~/.ssh/config

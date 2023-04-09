@@ -1,0 +1,15 @@
+Host ppinfo pp-gitlab
+IdentityFile ~/.ssh/ids/dev_rsa
+
+Host ppinfo
+User ubuntu
+HostName passportparking.info
+
+Host pp-gitlab
+User git
+HostName gitlab.pdev.io
+
+Host vagrant
+User vagrant
+HostName passport-vagrant-image
+IdentityFile ~/.vagrant.d/insecure_private_key

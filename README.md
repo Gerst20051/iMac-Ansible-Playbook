@@ -29,6 +29,5 @@ An ansible playbook used to maintain an iMac
 1. Save System Config Output
 1. Setup ~/.npmrcs
 1. Remove Atom
-1. SSH Config
 
 # Known Issues

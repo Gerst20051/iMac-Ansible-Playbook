@@ -21,6 +21,8 @@
       tags: ['app_store']
     - role: dock
       tags: ['dock']
+    - role: ssh
+      tags: ['ssh']
     - role: git
       tags: ['git']
     - role: shell

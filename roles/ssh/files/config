@@ -1,0 +1,84 @@
+# SSH client configuration file
+
+#IdentityFile ~/.ssh/ids/%h/%r/id_rsa
+#IdentityFile ~/.ssh/ids/%h/%r/id_dsa
+#IdentityFile ~/.ssh/ids/%h/id_rsa
+#IdentityFile ~/.ssh/ids/%h/id_dsa
+#IdentityFile ~/.ssh/id_rsa
+#IdentityFile ~/.ssh/id_dsa
+
+Host *
+KeepAlive yes
+ServerAliveInterval 20
+ServerAliveCountMax 120
+#ControlMaster auto
+#ControlPath /tmp/%r@%h:%p
+
+Host unc unc2
+User gerst
+
+Host unc
+HostName login.cs.unc.edu
+
+Host unc2
+HostName classroom.cs.unc.edu
+
+Host github
+User git
+HostName github.com
+IdentityFile ~/.ssh/github_rsa
+
+Host aws
+User ubuntu
+HostName ec2-54-186-217-188.us-west-2.compute.amazonaws.com
+IdentityFile ~/.ssh/aws/hnswave.pem
+
+Host droplet
+User root
+HostName 45.55.167.67
+IdentityFile ~/.ssh/droplet_rsa
+
+Host vagrant passport-vagrant gitlab-ci-vagrant
+User vagrant
+IdentityFile ~/.vagrant.d/insecure_private_key
+
+Host vagrant passport-vagrant
+HostName passport-vagrant-image
+
+Host gitlab-ci-vagrant
+HostName gitlab-ci
+
+Host utility
+User andrewg
+HostName utility.pdev.io
+IdentityFile ~/.ssh/ids/passport_rsa
+
+Host easypparking
+User ubuntu
+HostName easypparking.com
+IdentityFile ~/.ssh/ids/easypparking.com/ubuntu/stag_rsa
+
+Host ppinfo
+User ubuntu
+HostName passportparking.info
+IdentityFile ~/.ssh/ids/passportparking.info/ubuntu/ppinfo_rsa
+
+Host ppp ppp2
+User ubuntu
+IdentityFile ~/.ssh/ids/passportparking.com/ubuntu/prod_rsa
+
+Host ppp
+HostName ec2-54-91-104-253.compute-1.amazonaws.com
+
+Host ppp2
+HostName ec2-54-166-74-57.compute-1.amazonaws.com
+
+Host pp-gitlab
+User git
+HostName gitlab.pdev.io
+IdentityFile ~/.ssh/ids/dev_rsa
+
+Host gitlab
+User git
+HostName gitlab
+IdentityFile ~/.ssh/gitlab_rsa
