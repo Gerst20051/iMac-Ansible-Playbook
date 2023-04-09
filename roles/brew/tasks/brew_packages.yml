@@ -8,6 +8,9 @@
   tags:
     - install_brew
 
+# NOTE: just run the task again if it fails with the following error:
+# the connection plugin 'local' was not found
+
 # NOTE: Running installer for dockutil; your password may be necessary.
 # [$]> brew install --cask sublime-text
 - name: role [{{ role_name }}] install cask packages

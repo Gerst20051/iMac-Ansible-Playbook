@@ -33,6 +33,10 @@ This means they were either deleted or installed manually.
 You should find replacements for the following formulae:
   grv
 
+Warning: Some installed formulae are deprecated or disabled.
+You should find replacements for the following formulae:
+  ilmbase
+
 Warning: Homebrew's "sbin" was not found in your PATH but you have installed
 formulae that put executables in /usr/local/sbin.
 Consider setting your PATH for example like so:
