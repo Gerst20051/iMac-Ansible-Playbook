@@ -2,10 +2,6 @@ export NVM_DIR="$HOME/.nvm"
 # [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 # [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
-# tabtab source for serverless package
-# tabtab source for sls package
-# tabtab source for slss package
-
 test -f ~/.nvm/nvm.sh && . $_
 test -f $NVM_DIR/bash_completion && . $_
 test -f ~/.bash_exports && . $_

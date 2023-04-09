@@ -1,3 +1,6 @@
+# disable the update shell to zsh warning
+export BASH_SILENCE_DEPRECATION_WARNING=1
+
 # Add directories to PATH
 export PATH=/usr/local/bin:/opt/local/bin:/opt/local/sbin:~/dropbox/bin:~/bin:~/Library/Python/3.6/bin:$PATH
 

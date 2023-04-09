@@ -1,5 +1,21 @@
 ---
 
+# The default interactive shell is now zsh.
+# To update your account to use zsh, please run `chsh -s /bin/zsh`.
+# For more details, please visit https://support.apple.com/kb/HT208050.
+
+- name: role [{{ role_name }}] lookup the users default shell
+  shell: dscl . -read /Users/{{ lookup('env', 'USER') }} UserShell | cut -f2 -d' '
+  register: default_shell
+
+# [$]> chsh -s /bin/zsh
+- name: role [{{ role_name }}] set zsh as the default shell
+  user:
+    name: "{{ lookup('env', 'USER') }}"
+    shell: /bin/zsh
+  when: default_shell.stdout != '/bin/zsh'
+  become: yes
+
 - name: role [{{ role_name }}] copy shell files to home directory
   copy: src={{ item }}.sh dest=~/.{{ item }}
   with_items:
@@ -25,3 +41,14 @@
 - name: role [{{ role_name }}] copy passport makefile to home directory
   copy: src=PassportMakefile dest=~/Makefile
   when: false
+
+- name: role [{{ role_name }}] remove and create ~/.zsh directory
+  file: path=~/.zsh state={{ item }}
+  with_items:
+    - absent
+    - directory
+
+- name: role [{{ role_name }}] copy shell files to ~/.zsh directory
+  copy: src={{ item }}.zsh dest=~/.zsh/.{{ item }}
+  with_items:
+    - zsh_aliases
